@@ -5,12 +5,13 @@
  */
 package servlets;
 
+import empleados.empleado;
 import empleados.empleadoAsalariado;
 import empleados.empleadoComision;
 import empleados.empleadoPorHoras;
 import empleados.listaEmpleados;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -78,8 +79,15 @@ public class SubirServlet extends HttpServlet {
                 break;
         
         }
+        empleadoAsalariado ea2 = (empleadoAsalariado)context.getBean("asalariado");
+        ea2.setNombre("Empleado");
+        ea2.setApellido("de prueba");
+        ea2.setNoSeguroSocial("007");
+        ea2.setSalario(15);
+        lista.addEmpleado(ea2);
         request.setAttribute("listaEmpleados", lista.getListaE());
         request.getRequestDispatcher("listaEmpleados.jsp").forward(request, response);
+        
         //Añadir el empleado a la lista que se encuentra en empleados main
         
     }

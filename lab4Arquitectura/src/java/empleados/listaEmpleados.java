@@ -6,6 +6,7 @@
 package empleados;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -14,19 +15,19 @@ import java.util.ArrayList;
  */
 
 public class listaEmpleados {
-    private ArrayList<empleado> listaE;
+    private List listaE;
 
-    public ArrayList<empleado> getListaE() {
+    public List getListaE() {
         return listaE;
-    }
-    
+    }    
 
     public listaEmpleados() {
-      this.listaE=new ArrayList();  
+      this.listaE =new ArrayList();  
     }
     public void addEmpleado(empleado e){
         this.listaE.add(e);
     }
+    
     
 
     
