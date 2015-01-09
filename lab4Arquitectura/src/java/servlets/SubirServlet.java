@@ -33,7 +33,20 @@ public class SubirServlet extends HttpServlet {
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         String nroSeguro = request.getParameter("nroSeguro");
-        
+        String tipo = request.getParameter("type");
+        switch (tipo) {
+            case "ea":
+                int salario = Integer.parseInt(request.getParameter("salario"));
+                break;
+            case "eh":
+                int horas = Integer.parseInt(request.getParameter("horas"));
+                int salarioHora = Integer.parseInt(request.getParameter("salarioHora"));
+                break;
+            case "ec":
+                int ventaBruta = Integer.parseInt(request.getParameter("ventaBruta"));
+                int porcentajeComision = Integer.parseInt(request.getParameter("porcentajeComision"));
+                break;
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
