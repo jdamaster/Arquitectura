@@ -78,7 +78,8 @@ public class SubirServlet extends HttpServlet {
                 break;
         
         }
-        
+        request.setAttribute("listaEmpleados", lista.getListaE());
+        request.getRequestDispatcher("listaEmpleados.jsp").forward(request, response);
         //Añadir el empleado a la lista que se encuentra en empleados main
         
     }
