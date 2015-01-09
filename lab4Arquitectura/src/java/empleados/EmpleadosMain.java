@@ -20,12 +20,13 @@ public class EmpleadosMain {
     /**
      * @param args the command line arguments
      */
-    private final List empleados = new ArrayList();
+    private static List empleados;
     ApplicationContext context = new ClassPathXmlApplicationContext("/org/Spring.xml");
 
             
     public static void main(String[] args) {
-        // TODO code application logic here       
+        // TODO code application logic here    
+        empleados = new ArrayList();
         
     }
     

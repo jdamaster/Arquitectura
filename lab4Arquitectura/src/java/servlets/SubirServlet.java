@@ -47,6 +47,9 @@ public class SubirServlet extends HttpServlet {
                 int porcentajeComision = Integer.parseInt(request.getParameter("porcentajeComision"));
                 break;
         }
+        
+        //Añadir el empleado a la lista que se encuentra en empleados main
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
