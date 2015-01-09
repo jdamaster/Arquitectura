@@ -30,18 +30,26 @@ public class SubirServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SubirServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SubirServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String nroSeguro = request.getParameter("nroSeguro");
+        String tipo = request.getParameter("type");
+        switch (tipo) {
+            case "ea":
+                int salario = Integer.parseInt(request.getParameter("salario"));
+                break;
+            case "eh":
+                int horas = Integer.parseInt(request.getParameter("horas"));
+                int salarioHora = Integer.parseInt(request.getParameter("salarioHora"));
+                break;
+            case "ec":
+                int ventaBruta = Integer.parseInt(request.getParameter("ventaBruta"));
+                int porcentajeComision = Integer.parseInt(request.getParameter("porcentajeComision"));
+                break;
         }
+        
+        //Añadir el empleado a la lista que se encuentra en empleados main
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
