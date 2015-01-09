@@ -14,7 +14,7 @@
     <body>
         <h1>Agregar empleado</h1>
         <p>Tipo empleado:</p>
-        <select>
+        <select id="tipo empleado">
             <option>Empleado Asalariado</option>
             <option>Empleado por comisión</option>
             <option>Empleado por horas</option>
