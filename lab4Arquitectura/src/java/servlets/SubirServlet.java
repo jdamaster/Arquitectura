@@ -5,18 +5,26 @@
  */
 package servlets;
 
+import empleados.empleadoAsalariado;
+import empleados.empleadoComision;
+import empleados.empleadoPorHoras;
+import empleados.listaEmpleados;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
  * @author LuisD
  */
 public class SubirServlet extends HttpServlet {
+    ApplicationContext context = new ClassPathXmlApplicationContext("/org/Spring.xml");
+    listaEmpleados lista =(listaEmpleados)context.getBean("listaEmpleados");
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,15 +45,38 @@ public class SubirServlet extends HttpServlet {
         switch (tipo) {
             case "ea":
                 int salario = Integer.parseInt(request.getParameter("salario"));
+                empleadoAsalariado ea = (empleadoAsalariado)context.getBean("empleadoAsalariado");
+                ea.setNombre(nombre);
+                ea.setApellido(apellido);
+                ea.setNoSeguroSocial(nroSeguro);
+                ea.setSalario(salario);
+                lista.addEmpleado(ea);
                 break;
             case "eh":
                 int horas = Integer.parseInt(request.getParameter("horas"));
                 int salarioHora = Integer.parseInt(request.getParameter("salarioHora"));
+                empleadoPorHoras eh = (empleadoPorHoras)context.getBean("empleadoPorHoras");
+                eh.setNombre(nombre);
+                eh.setApellido(apellido);
+                eh.setNoSeguroSocial(nroSeguro);
+                eh.setHoras(horas);
+                eh.setValorHora(salarioHora);
+                lista.addEmpleado(eh);
                 break;
             case "ec":
                 int ventaBruta = Integer.parseInt(request.getParameter("ventaBruta"));
                 int porcentajeComision = Integer.parseInt(request.getParameter("porcentajeComision"));
+                empleadoComision ec = (empleadoComision)context.getBean("empleadoComision");
+                ec.setNombre(nombre);
+                ec.setApellido(apellido);
+                ec.setNoSeguroSocial(nroSeguro);
+                ec.setVentasBrutas(ventaBruta);
+                ec.setPorcentajeComision(porcentajeComision);
+        
+                lista.addEmpleado(ec);
+                
                 break;
+        
         }
         
         //Añadir el empleado a la lista que se encuentra en empleados main

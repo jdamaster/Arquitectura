@@ -31,4 +31,7 @@
 <bean id="porHoras"   class="empleados.empleadoPorHoras"   scope="prototype">
    
 </bean>
+<bean id="ListaEmpleados"   class="empleados.listaEmpleados"   scope="prototype">
+   
+</bean>
 </beans>

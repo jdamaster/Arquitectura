@@ -20,45 +20,14 @@ public class EmpleadosMain {
     /**
      * @param args the command line arguments
      */
-    private static List empleados;
-    ApplicationContext context = new ClassPathXmlApplicationContext("/org/Spring.xml");
+   
 
             
     public static void main(String[] args) {
         // TODO code application logic here    
-        empleados = new ArrayList();
+        
         
     }
     
-    public void addEmpleadoAsalariado(String nombre, String apellido, String nroSeguro, double salario){
-        empleadoAsalariado ea = (empleadoAsalariado)context.getBean("empleadoAsalariado");
-        ea.setNombre(nombre);
-        ea.setApellido(apellido);
-        ea.setNoSeguroSocial(nroSeguro);
-        ea.setSalario(salario);
-        
-        empleados.add(ea);
-    }
     
-    public void addEmpleadoComision(String nombre, String apellido, String nroSeguro, double ventasBrutas, double porcentajeComision){
-        empleadoComision ec = (empleadoComision)context.getBean("empleadoComision");
-        ec.setNombre(nombre);
-        ec.setApellido(apellido);
-        ec.setNoSeguroSocial(nroSeguro);
-        ec.setVentasBrutas(ventasBrutas);
-        ec.setPorcentajeComision(porcentajeComision);
-        
-        empleados.add(ec);
-    }
-    
-    public void addEmpleadoPorHora(String nombre, String apellido, String nroSeguro, int horas, double salarioHora){
-        empleadoPorHoras eh = (empleadoPorHoras)context.getBean("empleadoPorHoras");
-        eh.setNombre(nombre);
-        eh.setApellido(apellido);
-        eh.setNoSeguroSocial(nroSeguro);
-        eh.setHoras(horas);
-        eh.setValorHora(salarioHora);
-        
-        empleados.add(eh);
-    }
 }
