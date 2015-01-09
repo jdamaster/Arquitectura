@@ -20,6 +20,7 @@
             <p>Ventas brutas:</p><input type="text" name="ventaBruta" size="45">
             <p>Porcentaje de comisión:</p><input type="text" name="porcentajeComision" size="45">
             <input type="hidden" name="type" value="ec">
+            <input type="submit" value="guardar" name="submit" />
         </form>
     </body>
 </html>

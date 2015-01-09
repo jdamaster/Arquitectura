@@ -20,6 +20,7 @@
             <p>Horas trabajadas:</p><input type="text" name="horas" size="45">
             <p>Salario por hora:</p><input type="text" name="salarioHora" size="45">
             <input type="hidden" name="type" value="eh">
+            <input type="submit" value="Guardar" name="submit" />
         </form>
     </body>
 </html>

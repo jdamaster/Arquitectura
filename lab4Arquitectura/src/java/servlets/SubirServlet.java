@@ -24,7 +24,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class SubirServlet extends HttpServlet {
     ApplicationContext context = new ClassPathXmlApplicationContext("/org/Spring.xml");
-    listaEmpleados lista =(listaEmpleados)context.getBean("listaEmpleados");
+    listaEmpleados lista =(listaEmpleados)context.getBean("ListaEmpleados");
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -45,7 +45,7 @@ public class SubirServlet extends HttpServlet {
         switch (tipo) {
             case "ea":
                 int salario = Integer.parseInt(request.getParameter("salario"));
-                empleadoAsalariado ea = (empleadoAsalariado)context.getBean("empleadoAsalariado");
+                empleadoAsalariado ea = (empleadoAsalariado)context.getBean("asalariado");
                 ea.setNombre(nombre);
                 ea.setApellido(apellido);
                 ea.setNoSeguroSocial(nroSeguro);
@@ -55,7 +55,7 @@ public class SubirServlet extends HttpServlet {
             case "eh":
                 int horas = Integer.parseInt(request.getParameter("horas"));
                 int salarioHora = Integer.parseInt(request.getParameter("salarioHora"));
-                empleadoPorHoras eh = (empleadoPorHoras)context.getBean("empleadoPorHoras");
+                empleadoPorHoras eh = (empleadoPorHoras)context.getBean("porHoras");
                 eh.setNombre(nombre);
                 eh.setApellido(apellido);
                 eh.setNoSeguroSocial(nroSeguro);
@@ -66,7 +66,7 @@ public class SubirServlet extends HttpServlet {
             case "ec":
                 int ventaBruta = Integer.parseInt(request.getParameter("ventaBruta"));
                 int porcentajeComision = Integer.parseInt(request.getParameter("porcentajeComision"));
-                empleadoComision ec = (empleadoComision)context.getBean("empleadoComision");
+                empleadoComision ec = (empleadoComision)context.getBean("porComision");
                 ec.setNombre(nombre);
                 ec.setApellido(apellido);
                 ec.setNoSeguroSocial(nroSeguro);

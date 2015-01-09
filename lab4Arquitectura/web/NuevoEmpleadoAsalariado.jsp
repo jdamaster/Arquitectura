@@ -19,6 +19,7 @@
             <p>Número del seguro social:</p><input type="text" name="nroSeguro" size="45">
             <p>Salario:</p><input type="text" name="salario" size="45">
             <input type="hidden" name="type" value="ea">
+            <input type="submit" value="Guardar" name="submit" />
         </form>
     </body>
 </html>
