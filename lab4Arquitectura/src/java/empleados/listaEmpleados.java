@@ -15,9 +15,9 @@ import java.util.List;
  */
 
 public class listaEmpleados {
-    private List listaE;
+    private List<empleado> listaE;
 
-    public List getListaE() {
+    public List<empleado> getListaE() {
         return listaE;
     }    
 

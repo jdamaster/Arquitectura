@@ -18,19 +18,19 @@
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>No seguro social</th>
-                    <<th>Salario neto</th>>
+                    <th>Salario neto</th>
                 </tr>
             </thead>
             <tbody>
-                 <c:forEach items="${listaEmpleados}" var="empleado">
+                 <c:forEach items="${listaEmpleados}" var="empl">
                     <tr>
-                        <td>${empleado.getNombre()}</td>
-                        <td>${empleado.getApellido()}</td>
-                        <td>${empleado.getNoSeguroSocial}</td>
-                        <<td>${empleado.salario()}</td>
+                        <td>${empl.getNombre()}</td>
+                        <td>${empl.getApellido()}</td>
+                        <td>${empl.getNoSeguroSocial}</td>
+                        <td>${empl.salario()}</td>
                     </tr>
                 </c:forEach>
-            <!--</tbody>-->
+            </tbody>
         </table>
 
                     <a href="NuevoEmpleadoAsalariado.jsp">Menu principal</a>
