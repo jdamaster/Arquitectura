@@ -29,5 +29,15 @@ public class empleadoAsalariado extends empleado {
     public double salario() {
         return getSalario();
     }
+
+    @Override
+    public void created() {
+        System.out.println("Se ha creado una dependencia de EmpleadoAsalariado.");
+    }
+     
+    @Override
+    public void destroying(){
+        System.out.println("Se va a destruir una dependencia de EmpeladoAsalariado.");
+    }
     
 }

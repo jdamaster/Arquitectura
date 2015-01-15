@@ -5,6 +5,9 @@
  */
 package empleados;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 /**
  *
  * @author Usuario
@@ -41,6 +44,10 @@ public abstract class empleado {
     public empleado() {
     }
     public abstract double salario();
+     @PostConstruct
+    public abstract void created();
+    @PreDestroy
+    public abstract void destroying();
         
         
 }

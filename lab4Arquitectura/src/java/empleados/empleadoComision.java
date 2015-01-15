@@ -37,5 +37,14 @@ public class empleadoComision extends empleado {
     public double salario() {
         return this.getPorcentajeComision()*this.getVentasBrutas();
     }
+    @Override
+    public void created() {
+        System.out.println("Se ha creado una dependencia de EmpeladoComision.");
+    }
+     
+    @Override
+    public void destroying(){
+        System.out.println("Se va a destruir una dependencia de EmpeladoComision.");
+    }
     
 }

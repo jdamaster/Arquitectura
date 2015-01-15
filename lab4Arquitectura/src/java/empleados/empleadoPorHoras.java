@@ -41,5 +41,14 @@ public class empleadoPorHoras extends empleado{
             return (getHoras()*getValorHora()) + ((getHoras()-40)*1.5);
         }
     }
+    @Override
+    public void created() {
+        System.out.println("Se ha creado una dependencia de EmpeladoPorHoras.");
+    }
+     
+    @Override
+    public void destroying(){
+        System.out.println("Se va a destruir una dependencia de EmpeladoPorHoras.");
+    }
     
 }
